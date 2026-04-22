@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:modelhandling/screen/student_screen.dart';
+import 'package:modelhandling/screen/chat_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
     url: "https://vibtfiimebgzancimiih.supabase.co",
-    anonKey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpYnRmaWltZWJnemFuY2ltaWloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1NzM3MzAsImV4cCI6MjA4ODE0OTczMH0.vzAuhqnptO7CFrP6tx4zNKShu3w8OcTOoNZd1OBxyyE",
+    anonKey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpYnRmaWltZWJnemFuY2ltaWloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1NzM3MzAsImV4cCI6MjA4ODE0OTczMH0.vzAuhqnptO7CFrP6tx4zNKShu3w8OcTOoNZd1OBxyyE",
   );
 
   runApp(const MyApp());
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: StudentPage(),
+      home: ChatPage(username: "Romeo Suboc jr"),
     );
   }
 }

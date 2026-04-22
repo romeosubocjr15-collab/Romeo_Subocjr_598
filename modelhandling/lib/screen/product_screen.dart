@@ -23,31 +23,31 @@ class _ProductPageState extends State<ProductPage> {
     loadProducts();
   }
 
-  void loadProducts() async{
+  void loadProducts() async {
     final productdata = await controller.getProducts();
     setState(() {
       products = productdata;
     });
   }
 
-  void addProduct() async{
-    if(priceController.text.isEmpty || quantityController.text.isEmpty) {
+  void addProduct() async {
+    if (priceController.text.isEmpty || quantityController.text.isEmpty) {
       return;
     }
     final productdata = Product(
-      name: nameController.text, 
-      price: double.parse(priceController.text), 
+      name: nameController.text,
+      price: double.parse(priceController.text),
       quantity: int.parse(quantityController.text),
     );
     await controller.addProduct(productdata);
     loadProducts();
   }
 
-  void deleteProduct(int id) async{
+  void deleteProduct(int id) async {
     await controller.deleteProduct(id);
     loadProducts();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,7 @@
 
 import 'package:modelhandling/model/studentmodel.dart';
+
+
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 
@@ -43,7 +45,7 @@ return 0.0;
 
 double sum = 0.0;
 for (var student in students) {
-sum += student.gpa;
+sum += student.average;
 }
 return sum / students.length;
 }
@@ -52,7 +54,7 @@ return sum / students.length;
 int countPassed(List<Student> students) {
 int count = 0;
 for (var student in students) {
-if (student.age == 'Passed') count++;
+if (student.status == 'Passed') count++;
 }
 return count;
 }
@@ -62,7 +64,7 @@ return count;
 int countFailed(List<Student> students) {
 int count = 0;
 for (var student in students) {
-if (student.age == 'Failed') count++;
+if (student.status == 'Failed') count++;
 }
 return count;
 }
